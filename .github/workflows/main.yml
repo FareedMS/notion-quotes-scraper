@@ -1,0 +1,25 @@
+name: Run Notion Scraper Daily
+
+on:
+  schedule:
+    - cron: '0 5 * * *'  # ⏰ This means run every day at 5 AM UTC
+  workflow_dispatch:      # ➡️ Also allows manual run if needed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'  # or your replit node version
+
+      - name: Install Dependencies
+        run: npm install cheerio node-fetch
+
+      - name: Run Scraper
+        run: node scraper.mjs

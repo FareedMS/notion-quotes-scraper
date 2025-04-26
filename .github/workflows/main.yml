@@ -22,4 +22,4 @@ jobs:
         run: npm install cheerio node-fetch
 
       - name: Run Scraper
-        run: node scraper.mjs
+        run: node ./scraper.mjs

@@ -21,5 +21,5 @@ jobs:
       - name: Install Dependencies
         run: npm install cheerio node-fetch
 
-      - name: Run Scraper
-        run: node ./scraper.mjs
+      - name: Run Scrape
+        run: node ./scrape.mjs
